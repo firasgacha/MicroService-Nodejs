@@ -2,14 +2,14 @@ const Client = require('../model/client');
 
 exports.getClients = (req, res) => {
     const clients = Client.find().select('_id title body')
-        .then(posts => {
-            res.json({ clients });
+        .then(cl => {
+            res.json({ cl });
         })
         .catch(err => console.log(err));
 };
 
 exports.createClient = (req, res) => {
-    const client = new client(req.body);
+    const client = new Client(req.body);
 
     client.save().then(result => {
         res.json({

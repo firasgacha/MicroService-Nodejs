@@ -2,20 +2,20 @@ const Folder = require('../model/folder');
 
 exports.getFolders = (req, res) => {
     const folders = Folder.find().select('_id title body')
-        .then(posts => {
-            res.json({ folders });
+        .then(fol => {
+            res.json({ fol });
         })
         .catch(err => console.log(err));
 };
 
 exports.createFolder = (req, res) => {
-    const folder = new folders(req.body);
+    const folder = new Folder(req.body);
     folder.save().then(result => {
         res.json({
             folder: result
         });
     });
-}
+};
 
 exports.deleteFolder = (req, res) => {
     const id = req.params.id;

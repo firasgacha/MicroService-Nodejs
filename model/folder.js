@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const postSchema = mongoose.Schema({
+const folderSchema = mongoose.Schema({
     id: {
         type: String,
         required: true
     }
 });
 
-module.exports = mongoose.model('Folder', postSchema);
+module.exports = mongoose.model('Folder', folderSchema);

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const postSchema = mongoose.Schema({
+const clientSchema = mongoose.Schema({
     fullName: {
         type: String,
         required: true
@@ -26,4 +26,4 @@ const postSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Client', postSchema);
+module.exports = mongoose.model('Client', clientSchema);
